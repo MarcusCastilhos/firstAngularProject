@@ -2,11 +2,13 @@
     "livros": [
       {
         "id": 1,
-        "title": "Dom Quixote"
+        "title": "Dom Quixote",
+        "year": 1605
       },
       {
         "id": 2,
-        "title": "Cem Anos de Solidão"
+        "title": "Cem Anos de Solidão",
+        "year": 1967
       }
     ]
   }

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 interface Livro {
   id: number;
   title: string;
+  year: number;
 }
 
 @Injectable({

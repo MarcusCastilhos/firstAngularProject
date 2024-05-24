@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 interface Livro {
   id: number;
   title: string;
+  year: number;
 }
 
 @Component({
