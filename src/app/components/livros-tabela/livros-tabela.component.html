@@ -1,20 +1,18 @@
 <div class="container">
-  <div class="content-container">
-    <table class="table-wp">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Título</th>
-          <th>Ano</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let livro of livros">
-          <td>{{ livro.id }}</td>
-          <td>{{ livro.title }}</td>
-          <td>{{ livro.year }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table-wp">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Ano</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let livro of livros">
+        <td>{{ livro.id }}</td>
+        <td>{{ livro.title }}</td>
+        <td>{{ livro.year }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
