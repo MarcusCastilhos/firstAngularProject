@@ -10,7 +10,7 @@ interface Livro {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LivrosService {
   private apiUrl = `${environment.userApi}/livros`;
