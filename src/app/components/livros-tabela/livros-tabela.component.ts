@@ -22,26 +22,56 @@ export class LivrosTabelaComponent implements OnInit {
   constructor(private livrosService: LivrosService) {}
 
   ngOnInit(): void {
-    this.livrosService.getLivros().subscribe((data: Livro[]) => {
-      this.livros = data;
-      console.log(this.livros);
+    this.fetchLivros();
+  }
+
+  fetchLivros(): void {
+    this.livrosService.getLivros().subscribe({
+      next: (data: Livro[]) => {
+        this.livros = data;
+      },
+      error: (error) => {
+        console.error('Erro ao buscar livros:', error);
+        alert('Erro ao buscar livros. Tente novamente mais tarde.');
+      },
     });
   }
 
-  mostrarLivro(livro: Livro): void {
-    alert(
-      `Detalhes do Livro:\nID: ${livro.id}\nTítulo: ${livro.title}\nAno: ${livro.year}`
-    );
+  mostrarLivro(id: number): void {
+    this.livrosService.getLivroById(id).subscribe({
+      next: (livro: Livro) => {
+        alert(
+          `Detalhes do Livro:\nID: ${livro.id}\nTítulo: ${livro.title}\nAno: ${livro.year}`
+        );
+      },
+      error: (error) => {
+        console.error('Erro ao buscar detalhes do livro:', error);
+        alert('Erro ao buscar detalhes do livro. Tente novamente mais tarde.');
+      },
+    });
   }
 
-  editarLivro(livro: Livro): void {
-    console.log('Editando livro', livro);
+  editarLivro(id: number): void {
+    this.livrosService.getLivroById(id).subscribe({
+      next: (livro: Livro) => {
+        console.log('Editando livro', livro);
+      },
+      error: (error) => {
+        console.error('Erro ao buscar livro para edição:', error);
+        alert('Erro ao buscar livro para edição. Tente novamente mais tarde.');
+      },
+    });
   }
 
   deletarLivro(id: number): void {
-    this.livrosService.deleteLivro(id).subscribe(() => {
-      this.livros = this.livros.filter((l) => l.id !== id);
-      console.log('Livro deletado com sucesso');
+    this.livrosService.deleteLivro(id).subscribe({
+      next: () => {
+        console.log('Livro deletado com sucesso');
+      },
+      error: (error) => {
+        console.error('Erro ao deletar livro:', error);
+        alert('Erro ao deletar livro. Tente novamente mais tarde.');
+      },
     });
   }
 }

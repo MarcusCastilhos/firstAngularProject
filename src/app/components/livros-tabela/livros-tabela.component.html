@@ -14,8 +14,8 @@
         <td>{{ livro.title }}</td>
         <td>{{ livro.year }}</td>
         <td>
-          <i class="fas fa-eye" (click)="mostrarLivro(livro)"></i>
-          <i class="fas fa-edit" (click)="editarLivro(livro)"></i>
+          <i class="fas fa-eye" (click)="mostrarLivro(livro.id)"></i>
+          <i class="fas fa-edit" (click)="editarLivro(livro.id)"></i>
           <i class="fas fa-trash-alt" (click)="deletarLivro(livro.id)"></i>
         </td>
       </tr>

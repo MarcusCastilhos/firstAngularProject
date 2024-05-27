@@ -21,6 +21,10 @@ export class LivrosService {
     return this.http.get<Livro[]>(this.apiUrl);
   }
 
+  getLivroById(id: number): Observable<Livro> {
+    return this.http.get<Livro>(`${this.apiUrl}/${id}`);
+  }
+
   deleteLivro(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
