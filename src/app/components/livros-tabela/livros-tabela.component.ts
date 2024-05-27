@@ -67,6 +67,7 @@ export class LivrosTabelaComponent implements OnInit {
     this.livrosService.deleteLivro(id).subscribe({
       next: () => {
         console.log('Livro deletado com sucesso');
+        this.fetchLivros();
       },
       error: (error) => {
         console.error('Erro ao deletar livro:', error);
