@@ -1,12 +1,23 @@
 .table-wp {
   border-collapse: collapse;
   width: 60%;
-  margin: 5%;
+  margin: 4%;
 
   th,
   td {
     border: 1px solid black;
     padding: 8px;
     text-align: center;
+  }
+
+  td i {
+    margin: 0 5px;
+    cursor: pointer;
+    color: #333; /* Cor dos ícones */
+    transition: color 0.3s;
+  }
+
+  td i:hover {
+    color: #007bff; /* Cor ao passar o mouse */
   }
 }

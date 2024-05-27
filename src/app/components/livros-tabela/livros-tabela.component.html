@@ -5,7 +5,7 @@
         <th>ID</th>
         <th>Título</th>
         <th>Ano</th>
-        <th>X</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -13,7 +13,11 @@
         <td>{{ livro.id }}</td>
         <td>{{ livro.title }}</td>
         <td>{{ livro.year }}</td>
-        <td>O E R</td>
+        <td>
+          <i class="fas fa-eye" (click)="mostrarLivro(livro)"></i>
+          <i class="fas fa-edit" (click)="editarLivro(livro)"></i>
+          <i class="fas fa-trash-alt" (click)="deletarLivro(livro.id)"></i>
+        </td>
       </tr>
     </tbody>
   </table>
