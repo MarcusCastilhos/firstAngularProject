@@ -1,0 +1,14 @@
+.add-book {
+  margin-left: 10%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  cursor: pointer;
+  font-size: 18px;
+  color: rgb(23, 25, 34);
+  font-weight: bold;
+}
+
+.add-book:hover {
+  color: rgb(24, 90, 160) !important;
+  transition: 250ms linear;
+}
