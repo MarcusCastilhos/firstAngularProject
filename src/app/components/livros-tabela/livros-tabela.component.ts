@@ -64,15 +64,20 @@ export class LivrosTabelaComponent implements OnInit {
   }
 
   deletarLivro(id: number): void {
-    this.livrosService.deleteLivro(id).subscribe({
-      next: () => {
-        console.log('Livro deletado com sucesso');
-        this.fetchLivros();
-      },
-      error: (error) => {
-        console.error('Erro ao deletar livro:', error);
-        alert('Erro ao deletar livro. Tente novamente mais tarde.');
-      },
-    });
+    const confirmDelete = confirm(
+      'Você tem certeza que deseja deletar este livro?'
+    );
+    if (confirmDelete) {
+      this.livrosService.deleteLivro(id).subscribe({
+        next: () => {
+          console.log('Livro deletado com sucesso');
+          this.fetchLivros();
+        },
+        error: (error) => {
+          console.error('Erro ao deletar livro:', error);
+          alert('Erro ao deletar livro. Tente novamente mais tarde.');
+        },
+      });
+    }
   }
 }
