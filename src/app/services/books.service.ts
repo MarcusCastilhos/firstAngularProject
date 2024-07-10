@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environments';
 
-interface Livro {
+interface Book {
   id: number;
   title: string;
   year: number;
@@ -12,20 +12,20 @@ interface Livro {
 @Injectable({
   providedIn: 'root',
 })
-export class LivrosService {
-  private apiUrl = `${environment.userApi}/livros`;
+export class BooksService {
+  private apiUrl = `${environment.userApi}/books`;
 
   constructor(private http: HttpClient) {}
 
-  getLivros(): Observable<Livro[]> {
-    return this.http.get<Livro[]>(this.apiUrl);
+  getBooks(): Observable<Book[]> {
+    return this.http.get<Book[]>(this.apiUrl);
   }
 
-  getLivroById(id: number): Observable<Livro> {
-    return this.http.get<Livro>(`${this.apiUrl}/${id}`);
+  getBookById(id: number): Observable<Book> {
+    return this.http.get<Book>(`${this.apiUrl}/${id}`);
   }
 
-  deleteLivro(id: number): Observable<void> {
+  deleteBook(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

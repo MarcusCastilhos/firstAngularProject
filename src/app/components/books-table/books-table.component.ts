@@ -1,34 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { LivrosService } from '../../services/livros.service';
+import { BooksService } from '../../services/books.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
-interface Livro {
+interface Book {
   id: number;
   title: string;
   year: number;
 }
 
 @Component({
-  selector: 'app-livros-tabela',
+  selector: 'app-books-table',
   standalone: true,
   imports: [CommonModule, HttpClientModule],
-  templateUrl: './livros-tabela.component.html',
-  styleUrl: './livros-tabela.component.scss',
+  templateUrl: './books-table.component.html',
+  styleUrl: './books-table.component.scss',
 })
-export class LivrosTabelaComponent implements OnInit {
-  livros: Livro[] = [];
+export class BooksTableComponent implements OnInit {
+  books: Book[] = [];
 
-  constructor(private livrosService: LivrosService) {}
+  constructor(private booksService: BooksService) {}
 
   ngOnInit(): void {
-    this.fetchLivros();
+    this.fetchBooks();
   }
 
-  fetchLivros(): void {
-    this.livrosService.getLivros().subscribe({
-      next: (data: Livro[]) => {
-        this.livros = data;
+  fetchBooks(): void {
+    this.booksService.getBooks().subscribe({
+      next: (data: Book[]) => {
+        this.books = data;
       },
       error: (error) => {
         console.error('Erro ao buscar livros:', error);
@@ -37,11 +37,11 @@ export class LivrosTabelaComponent implements OnInit {
     });
   }
 
-  mostrarLivro(id: number): void {
-    this.livrosService.getLivroById(id).subscribe({
-      next: (livro: Livro) => {
+  showBooks(id: number): void {
+    this.booksService.getBookById(id).subscribe({
+      next: (book: Book) => {
         alert(
-          `Detalhes do Livro:\nID: ${livro.id}\nTítulo: ${livro.title}\nAno: ${livro.year}`
+          `Detalhes do Livro:\nID: ${book.id}\nTítulo: ${book.title}\nAno: ${book.year}`
         );
       },
       error: (error) => {
@@ -51,10 +51,10 @@ export class LivrosTabelaComponent implements OnInit {
     });
   }
 
-  editarLivro(id: number): void {
-    this.livrosService.getLivroById(id).subscribe({
-      next: (livro: Livro) => {
-        console.log('Editando livro', livro);
+  editBook(id: number): void {
+    this.booksService.getBookById(id).subscribe({
+      next: (book: Book) => {
+        console.log('Editando livro', book);
       },
       error: (error) => {
         console.error('Erro ao buscar livro para edição:', error);
@@ -63,15 +63,15 @@ export class LivrosTabelaComponent implements OnInit {
     });
   }
 
-  deletarLivro(id: number): void {
+  deleteBook(id: number): void {
     const confirmDelete = confirm(
       'Você tem certeza que deseja deletar este livro?'
     );
     if (confirmDelete) {
-      this.livrosService.deleteLivro(id).subscribe({
+      this.booksService.deleteBook(id).subscribe({
         next: () => {
           console.log('Livro deletado com sucesso');
-          this.fetchLivros();
+          this.fetchBooks();
         },
         error: (error) => {
           console.error('Erro ao deletar livro:', error);
