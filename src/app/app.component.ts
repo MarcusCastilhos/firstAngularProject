@@ -21,7 +21,7 @@ import { CommonModule } from '@angular/common';
   providers: [LivrosService],
 })
 export class AppComponent {
-  isAddingBook = false;
+  isAddingBook = true;
 
   onAddBook() {
     this.isAddingBook = true;
