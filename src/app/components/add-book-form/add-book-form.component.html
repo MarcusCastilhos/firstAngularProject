@@ -47,8 +47,11 @@
       </div>
     </div>
 
-    <button class="btn btn-primary" [disabled]="bookForm.invalid">
+    <button type="submit" class="btn btn-primary" [disabled]="bookForm.invalid">
       Confirmar
+    </button>
+    <button type="button" class="btn btn-secundary" (click)="onCancel()">
+      Cancelar
     </button>
   </form>
 </div>

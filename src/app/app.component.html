@@ -3,6 +3,10 @@
     <app-titulo />
     <app-add-book (addBook)="onAddBook()" />
     <app-livros-tabela *ngIf="!isAddingBook" />
-    <app-add-book-form *ngIf="isAddingBook" (bookAdded)="onBookAdded()" />
+    <app-add-book-form
+      *ngIf="isAddingBook"
+      (bookAdded)="onBookAdded()"
+      (cancelAddBook)="onCancelAddBook()"
+    />
   </div>
 </div>

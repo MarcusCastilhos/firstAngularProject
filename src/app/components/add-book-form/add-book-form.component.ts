@@ -16,6 +16,7 @@ import {
 })
 export class AddBookFormComponent {
   @Output() bookAdded = new EventEmitter<void>();
+  @Output() cancelAddBook = new EventEmitter<void>();
   bookForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -33,5 +34,9 @@ export class AddBookFormComponent {
     } else {
       console.log('Formulário inválido');
     }
+  }
+
+  onCancel() {
+    this.cancelAddBook.emit();
   }
 }

@@ -30,4 +30,8 @@ export class AppComponent {
   onBookAdded() {
     this.isAddingBook = false;
   }
+
+  onCancelAddBook() {
+    this.isAddingBook = false;
+  }
 }
