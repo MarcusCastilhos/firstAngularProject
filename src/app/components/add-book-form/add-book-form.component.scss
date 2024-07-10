@@ -51,4 +51,9 @@ form .form-group .input-form:valid ~ label {
   background-color: rgb(23, 25, 34);
   color: white;
   cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: rgba(23, 25, 34, 0.884);
 }
