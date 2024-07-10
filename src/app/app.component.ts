@@ -4,6 +4,7 @@ import { LivrosTabelaComponent } from './components/livros-tabela/livros-tabela.
 import { TituloComponent } from './components/titulo/titulo.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { AddBookFormComponent } from './components/add-book-form/add-book-form.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { AddBookFormComponent } from './components/add-book-form/add-book-form.c
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   imports: [
+    CommonModule,
     LivrosTabelaComponent,
     TituloComponent,
     AddBookComponent,
@@ -18,4 +20,10 @@ import { AddBookFormComponent } from './components/add-book-form/add-book-form.c
   ],
   providers: [LivrosService],
 })
-export class AppComponent {}
+export class AppComponent {
+  isAddingBook = false;
+
+  onAddBook() {
+    this.isAddingBook = true;
+  }
+}
