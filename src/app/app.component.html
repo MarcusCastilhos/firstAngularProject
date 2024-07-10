@@ -1,8 +1,8 @@
 <div class="container">
   <div class="content-container">
     <app-titulo />
-    <app-add-book />
-    <app-livros-tabela />
-    <app-add-book-form />
+    <app-add-book (addBook)="onAddBook()" />
+    <app-livros-tabela *ngIf="!isAddingBook" />
+    <app-add-book-form *ngIf="isAddingBook" />
   </div>
 </div>
