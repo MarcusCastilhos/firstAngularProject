@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -15,6 +15,7 @@ import {
   styleUrl: './add-book-form.component.scss',
 })
 export class AddBookFormComponent {
+  @Output() bookAdded = new EventEmitter<void>();
   bookForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -28,6 +29,7 @@ export class AddBookFormComponent {
   onSubmit() {
     if (this.bookForm.valid) {
       console.log(this.bookForm.value);
+      this.bookAdded.emit();
     } else {
       console.log('Formulário inválido');
     }

@@ -26,4 +26,8 @@ export class AppComponent {
   onAddBook() {
     this.isAddingBook = true;
   }
+
+  onBookAdded() {
+    this.isAddingBook = false;
+  }
 }
