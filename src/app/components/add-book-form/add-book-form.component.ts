@@ -6,6 +6,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { BooksService } from '../../services/books.service';
 
 @Component({
   selector: 'app-add-book-form',
@@ -19,7 +20,7 @@ export class AddBookFormComponent {
   @Output() cancelAddBook = new EventEmitter<void>();
   bookForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private booksService: BooksService) {
     this.bookForm = this.fb.group({
       title: ['', Validators.required],
       year: ['', [Validators.required, Validators.pattern(/^\d{4}$/)]],
@@ -29,10 +30,16 @@ export class AddBookFormComponent {
 
   onSubmit() {
     if (this.bookForm.valid) {
-      console.log(this.bookForm.value);
-      this.bookAdded.emit();
+      const newBook = this.bookForm.value;
+      this.booksService.addBook(newBook).subscribe({
+        next: () => {
+          console.log('Livro adicionado com sucesso');
+          this.bookAdded.emit();
+        },
+      });
     } else {
       console.log('Formulário inválido');
+      this.bookForm.markAllAsTouched();
     }
   }
 
