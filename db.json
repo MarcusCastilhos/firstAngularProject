@@ -4,19 +4,19 @@
       "id": 1,
       "title": "Dom Quixote",
       "year": 1605,
-      "author": "Xarua"
+      "author": "Miguel de Cervantes"
     },
     {
-      "id": 1,
+      "id": 2,
       "title": "Cem Anos de Solidão",
       "year": 1967,
-      "author": "Dedé"
+      "author": "Gabriel García Márquez"
     },
     {
       "id": 3,
-      "title": "teste",
-      "year": 2012,
-      "author": "teste"
+      "title": "Harry Potter e a Pedra Filosofal",
+      "year": 1997,
+      "author": "J.K. Rowling"
     }
   ]
 }

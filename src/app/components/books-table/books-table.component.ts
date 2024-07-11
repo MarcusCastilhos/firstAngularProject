@@ -7,6 +7,7 @@ interface Book {
   id: number;
   title: string;
   year: number;
+  author: string;
 }
 
 @Component({
@@ -41,7 +42,7 @@ export class BooksTableComponent implements OnInit {
     this.booksService.getBookById(id).subscribe({
       next: (book: Book) => {
         alert(
-          `Detalhes do Livro:\nID: ${book.id}\nTítulo: ${book.title}\nAno: ${book.year}`
+          `Detalhes do Livro:\nID: ${book.id}\nTítulo: ${book.title}\nAno: ${book.year}\nAutor: ${book.author}`
         );
       },
       error: (error) => {
