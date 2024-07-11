@@ -30,7 +30,10 @@ export class AddBookFormComponent {
 
   onSubmit() {
     if (this.bookForm.valid) {
-      const newBook = this.bookForm.value;
+      const newBook = {
+        ...this.bookForm.value,
+        year: Number(this.bookForm.value.year),
+      };
       this.booksService.addBook(newBook).subscribe({
         next: () => {
           console.log('Livro adicionado com sucesso');
@@ -39,7 +42,6 @@ export class AddBookFormComponent {
       });
     } else {
       console.log('Formulário inválido');
-      this.bookForm.markAllAsTouched();
     }
   }
 
