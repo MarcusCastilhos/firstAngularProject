@@ -2,21 +2,123 @@
   "books": [
     {
       "id": "1",
-      "title": "Dom Quixote",
-      "year": 1605,
-      "author": "Miguel de Cervantes"
+      "title": "The Great Gatsby",
+      "year": 1925,
+      "author": "F. Scott Fitzgerald"
     },
     {
       "id": "2",
-      "title": "Cem Anos de Solidão",
-      "year": 1967,
-      "author": "Gabriel García Márquez"
+      "title": "To Kill a Mockingbird",
+      "year": 1960,
+      "author": "Harper Lee"
     },
     {
       "id": "3",
-      "title": "Harry Potter e a Pedra Filosofal",
-      "year": 1997,
-      "author": "J.K. Rowling"
+      "title": "1984",
+      "year": 1949,
+      "author": "George Orwell"
+    },
+    {
+      "id": "4",
+      "title": "Pride and Prejudice",
+      "year": 1813,
+      "author": "Jane Austen"
+    },
+    {
+      "id": "5",
+      "title": "The Catcher in the Rye",
+      "year": 1951,
+      "author": "J.D. Salinger"
+    },
+    {
+      "id": "6",
+      "title": "The Hobbit",
+      "year": 1937,
+      "author": "J.R.R. Tolkien"
+    },
+    {
+      "id": "7",
+      "title": "Fahrenheit 451",
+      "year": 1953,
+      "author": "Ray Bradbury"
+    },
+    {
+      "id": "8",
+      "title": "The Grapes of Wrath",
+      "year": 1939,
+      "author": "John Steinbeck"
+    },
+    {
+      "id": "9",
+      "title": "Moby-Dick",
+      "year": 1851,
+      "author": "Herman Melville"
+    },
+    {
+      "id": "10",
+      "title": "Brave New World",
+      "year": 1932,
+      "author": "Aldous Huxley"
+    },
+    {
+      "id": "11",
+      "title": "War and Peace",
+      "year": 1869,
+      "author": "Leo Tolstoy"
+    },
+    {
+      "id": "12",
+      "title": "The Odyssey",
+      "year": -800,
+      "author": "Homer"
+    },
+    {
+      "id": "13",
+      "title": "Crime and Punishment",
+      "year": 1866,
+      "author": "Fyodor Dostoevsky"
+    },
+    {
+      "id": "14",
+      "title": "The Brothers Karamazov",
+      "year": 1880,
+      "author": "Fyodor Dostoevsky"
+    },
+    {
+      "id": "15",
+      "title": "Madame Bovary",
+      "year": 1856,
+      "author": "Gustave Flaubert"
+    },
+    {
+      "id": "16",
+      "title": "The Divine Comedy",
+      "year": 1320,
+      "author": "Dante Alighieri"
+    },
+    {
+      "id": "17",
+      "title": "The Iliad",
+      "year": -750,
+      "author": "Homer"
+    },
+    {
+      "id": "18",
+      "title": "Jane Eyre",
+      "year": 1847,
+      "author": "Charlotte Brontë"
+    },
+    {
+      "id": "19",
+      "title": "Wuthering Heights",
+      "year": 1847,
+      "author": "Emily Brontë"
+    },
+    {
+      "id": "20",
+      "title": "The Picture of Dorian Gray",
+      "year": 1890,
+      "author": "Oscar Wilde"
     }
   ]
 }
