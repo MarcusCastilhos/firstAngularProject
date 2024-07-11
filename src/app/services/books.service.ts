@@ -4,7 +4,7 @@ import { map, Observable, switchMap } from 'rxjs';
 import { environment } from '../../environments/environments';
 
 interface Book {
-  id: string;
+  id: number;
   title: string;
   year: number;
   author: string;
@@ -34,10 +34,8 @@ export class BooksService {
     return this.getBooks().pipe(
       map((books) => {
         const maxId =
-          books.length > 0
-            ? Math.max(...books.map((b) => parseInt(b.id, 10)))
-            : 0;
-        book.id = (maxId + 1).toString();
+          books.length > 0 ? Math.max(...books.map((b) => b.id)) : 0;
+        book.id = maxId + 1;
         return book;
       }),
       switchMap((newBook) => this.http.post<Book>(this.apiUrl, newBook))

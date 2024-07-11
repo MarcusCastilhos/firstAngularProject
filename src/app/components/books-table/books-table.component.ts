@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 interface Book {
-  id: string;
+  id: number;
   title: string;
   year: number;
   author: string;
